@@ -10,17 +10,13 @@
 
 
     const App = () => {
-        const arrayTextoFuncionModificaTexto = useState("");
-        
-        const texto = arrayTextoFuncionModificaTexto[0]
-        const modificaTexto = arrayTextoFuncionModificaTexto[1]
-        console.log(modificaTexto[1])
-
+        const [stack, setStack ] = useState([]);
+3 
         return (<main className="react-calculator">
-            <Result value={texto} />
+            <Result value={stack} />
             <Numbers onClickNumber={number => {
             //console.log("Click en number", number)
-            modificaTexto(number)
+            setStack(number)
         }}
             />
             <Functions onContentClear={ () => console.log("Content Clear")}
